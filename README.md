@@ -3,8 +3,8 @@
 Hello, there are 4 member in a Team:
 1. Chinmay Jain
 2. Gourav Dhankhar
-3. Bharat Khandelwal
-4. Rishikesh Singh
+3. Bablu Kumar
+4. Ram Dayal
 
 We are develope a project of Kanban-Board in React-js.
 
