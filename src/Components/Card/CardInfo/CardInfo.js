@@ -9,7 +9,7 @@ import {
   X,
 } from "react-feather";
 
-import Modal from "../../../Modal/Modal";
+import Modal from "../../Modal/Modal";
 import Editable from "../../Editabled/Editable";
 
 import "./CardInfo.css";
