@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-
+import { Box, User } from "react-feather";
 import Board from "../Board/Board";
-
 import "./Main.css";
 import Editable from "../Editabled/Editable";
-
 
 function Main() {
   const [boards, setBoards] = useState(
@@ -124,7 +122,8 @@ function Main() {
   return (
     <div className="main">
       <div className="main_nav">
-        <h1>Kanban Board</h1>
+        <h1>𝕂𝕒𝕟𝕓𝕒𝕟 𝔹𝕠𝕒𝕣𝕕</h1>
+        <User className="main_user" />
       </div>
       <div className="main_boards_container">
         <div className="main_boards">
