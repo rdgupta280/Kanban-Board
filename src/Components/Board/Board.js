@@ -9,8 +9,18 @@ import "./Board.css";
 
 function Board(props) {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const { id, title, date, tasks, labels } = props.board;
 
   return (
+    // <div
+    //     //className="board"
+    //     draggable
+    //     onDragEnd={() => props.dragEnded(props.boardId, id)}
+    //     onDragEnter={() => props.dragEntered(props.boardId, id)}
+    //     onClick={() => setShowModal(true)}
+    //   >
     <div className="board">
       <div className="board_header">
         <p className="board_header_title">
@@ -57,6 +67,7 @@ function Board(props) {
         />
       </div>
     </div>
+    // </div>
   );
 }
 
