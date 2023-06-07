@@ -17,7 +17,7 @@ function Main() {
   const addboardHandler = (name) => {
     const tempBoards = [...boards];
     tempBoards.push({
-      id: Date.now() + Math.random() * 2,
+      id: Date.now() + Math.floor(Math.random() * 2),
       title: name,
       cards: [],
     });
@@ -39,7 +39,7 @@ function Main() {
 
     const tempBoards = [...boards];
     tempBoards[index].cards.push({
-      id: Date.now() + Math.random() * 2,
+      id: Date.now() + Math.floor(Math.random() * 2),
       title,
       labels: [],
       date: "",
