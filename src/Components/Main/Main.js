@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, User } from "react-feather";
+import { User } from "react-feather";
 import Board from "../Board/Board";
 import "./Main.css";
 import Editable from "../Editabled/Editable";
