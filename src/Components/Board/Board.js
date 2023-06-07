@@ -9,9 +9,9 @@ import "./Board.css";
 
 function Board(props) {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  //const [showModal, setShowModal] = useState(false);
 
-  const { id, title, date, tasks, labels } = props.board;
+  // const { id, title, date, tasks, labels } = props.board;
 
   return (
     // <div
