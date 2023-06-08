@@ -5,13 +5,13 @@ body {
 
 
 .custom-scroll::-webkit-scrollbar {
-  width: 8px;
+  width: 0;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
   border-radius: 50px;
   border: 1px solid #ccc;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .custom-scroll::-webkit-scrollbar-thumb:hover {

@@ -8,25 +8,34 @@ import Editable from "../Editabled/Editable";
 import "./Board.css";
 
 function Board(props) {
-  const [showDropdown, setShowDropdown] = useState(false);
-  //const [showModal, setShowModal] = useState(false);
+  
+const [showDropdown, setShowDropdown] = useState(false);
+const [edit,SetEdit]=useState(true)
+const [inputValue, setInputValue]= useState(props.board?.title)
 
-  // const { id, title, date, tasks, labels } = props.board;
 
+function handletitle(){
+  console.warn(props?.board?.title)
+     SetEdit(false)
+  }
+
+function handleSubmit(e){
+  e.preventDefault()
+  SetEdit(true)
+}
   return (
-    // <div
-    //     //className="board"
-    //     draggable
-    //     onDragEnd={() => props.dragEnded(props.boardId, id)}
-    //     onDragEnter={() => props.dragEntered(props.boardId, id)}
-    //     onClick={() => setShowModal(true)}
-    //   >
     <div className="board">
       <div className="board_header">
-        <p className="board_header_title">
-          {props.board?.title}
-          <span>{props.board?.cards?.length || 0}</span>
-        </p>
+<div className="board_header_title">
+
+     { edit ? <p  onClick={handletitle}>
+          {inputValue}
+          {/* <span>{props.board?.cards?.length || 0}</span> */}
+        </p>: <form onSubmit={handleSubmit}><input value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/></form> 
+        }</div>
+
+
+
         <div
           className="board_header_title_more"
           onClick={(event) => {

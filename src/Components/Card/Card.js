@@ -90,12 +90,12 @@ function Card(props) {
               {formatDate(date)}
             </p>
           )}
-          {tasks && tasks?.length > 0 && (
+          {/* {tasks && tasks?.length > 0 && (
             <p className="card_footer_item">
               <CheckSquare className="card_footer_icon" />
               {tasks?.filter((item) => item.completed)?.length}/{tasks?.length}
             </p>
-          )}
+          )} */}
         </div>
       </div>
     </>
