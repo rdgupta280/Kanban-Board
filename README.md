@@ -11,6 +11,13 @@ We are develope a project of Kanban-Board in React-js.
 
 
 
+//title name change
+//board drag and drop
+//dynamic routing
+
+
+
+
 
 
 
