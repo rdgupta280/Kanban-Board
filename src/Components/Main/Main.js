@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { User } from "react-feather";
 import Board from "../Board/Board";
 import "./Main.css";
+import { v4 as uuidv4 } from 'uuid';
 import Editable from "../Editabled/Editable";
 
 function Main() {
   const [boards, setBoards] = useState(
-    JSON.parse(localStorage.getItem("prac-kanban")) || []
+    JSON.parse(localStorage.getItem("kanbanBoard")) || []
   );
 
   const [targetCard, setTargetCard] = useState({
@@ -17,7 +18,7 @@ function Main() {
   const addboardHandler = (name) => {
     const tempBoards = [...boards];
     tempBoards.push({
-      id: Date.now() + Math.floor(Math.random() * 2),
+      id: uuidv4(),
       title: name,
       cards: [],
     });
@@ -39,7 +40,7 @@ function Main() {
 
     const tempBoards = [...boards];
     tempBoards[index].cards.push({
-      id: Date.now() + Math.floor(Math.random() * 2),
+      id:uuidv4(),
       title,
       labels: [],
       date: "",
@@ -116,7 +117,7 @@ function Main() {
   };
 
   useEffect(() => {
-    localStorage.setItem("prac-kanban", JSON.stringify(boards));
+    localStorage.setItem("kanbanBoard", JSON.stringify(boards));
   }, [boards]);
 
   return (
