@@ -1,12 +1,12 @@
-//import logo from './logo.svg';
-import './App.css';
-import Editable from './Components/Editable/Editable';
-import Card from './Components/Card/Card';
+import React from 'react';
+import Main from './Components/Main/Main';
+//import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-    <Editable/>
+    <div className='app'>
+     <Main/>
     </div>
   );
 }
