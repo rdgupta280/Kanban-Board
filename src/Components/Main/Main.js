@@ -146,7 +146,7 @@ function Main() {
     <div className="main" style={{ backgroundColor: color }}>
       {/* backgroundImage: `url(${backgroundImage})`,  */}
       <div className="main_nav">
-        <h1>𝕂𝕒𝕟𝕓𝕒𝕟 𝔹𝕠𝕒𝕣𝕕</h1>
+        <h1 style={{ color: color }}>𝕂𝕒𝕟𝕓𝕒𝕟 𝔹𝕠𝕒𝕣𝕕</h1>
         <FastForward
           className="background_color"
           style={{ color: color }}
