@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MoreHorizontal } from "react-feather";
 
 import Card from "../Card/Card";
@@ -13,9 +13,32 @@ const [showDropdown, setShowDropdown] = useState(false);
 const [edit,SetEdit]=useState(true)
 const [inputValue, setInputValue]= useState(props.board?.title)
 
+//let a;
+const b=JSON.parse(localStorage.getItem("kanbanBoard"));
+// if(!b){
+//   a=0;
+// }
+// else{
+//   a=b;
+// }
+//console.log(a,b);
+useEffect(()=>{
+    if(b){
+      const name= b.find((e)=>{
+        if(e.id===props.board.id){
+          return true;
+        }
+        return false;
+      }
+      )
+      name.title=inputValue;
+       localStorage.setItem("kanbanBoard",JSON.stringify(b))
+    }
+},[inputValue])
+
 
 function handletitle(){
-  console.warn(props?.board?.title)
+  console.warn(props?.board?.id)
      SetEdit(false)
   }
 
@@ -30,10 +53,8 @@ function handleSubmit(e){
 
      { edit ? <p  onClick={handletitle}>
           {inputValue}
-          {/* <span>{props.board?.cards?.length || 0}</span> */}
         </p>: <form onSubmit={handleSubmit}><input value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/></form> 
         }</div>
-
 
 
         <div
