@@ -5,8 +5,10 @@ import Dropdown from "../Dropdown/Dropdown";
 
 import "./Card.css";
 import CardInfo from "./CardInfo/CardInfo";
+import { useNavigate } from "react-router-dom";
 
 function Card(props) {
+  const navigate=useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -36,6 +38,10 @@ function Card(props) {
     const month = months[date.getMonth()];
     return day + " " + month;
   };
+
+  const handleNavigate=()=>{
+    navigate("/card")
+  }
 
   return (
     <>
@@ -82,7 +88,7 @@ function Card(props) {
             )}
           </div>
         </div>
-        <div className="card_title">{title}</div>
+        <div className="card_title" onClick={handleNavigate}>{title}</div>
         <div className="card_footer">
           {date && (
             <p className="card_footer_item">
