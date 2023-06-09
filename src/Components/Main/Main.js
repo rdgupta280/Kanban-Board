@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { User } from "react-feather";
+import { Image, User } from "react-feather";
 import Board from "../Board/Board";
 import "./Main.css";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import Editable from "../Editabled/Editable";
+import { FastForward } from "feather-icons-react/build/IconComponents";
 
 function Main() {
   const [boards, setBoards] = useState(
@@ -40,7 +41,7 @@ function Main() {
 
     const tempBoards = [...boards];
     tempBoards[index].cards.push({
-      id:uuidv4(),
+      id: uuidv4(),
       title,
       labels: [],
       date: "",
@@ -120,10 +121,38 @@ function Main() {
     localStorage.setItem("kanbanBoard", JSON.stringify(boards));
   }, [boards]);
 
+  const colors = [
+    "#212121",
+    "red",
+    "#3cb371",
+    "#1a1a1a",
+    "blue",
+    "#333333",
+    "green",
+    "yellow",
+    "#C0C0C0",
+    "black",
+  ];
+
+  const [color, setColor] = useState("#1a1a1a");
+  function handleColorChange() {
+    const currentIndex = colors.indexOf(color);
+    //console.log(currentIndex)
+    const nextIndex = currentIndex + 1;
+    setColor(colors[nextIndex]);
+  }
+
   return (
-    <div className="main">
+    <div className="main" style={{ backgroundColor: color }}>
+      {/* backgroundImage: `url(${backgroundImage})`,  */}
       <div className="main_nav">
         <h1>𝕂𝕒𝕟𝕓𝕒𝕟 𝔹𝕠𝕒𝕣𝕕</h1>
+        <FastForward
+          className="background_color"
+          style={{ color: color }}
+          onClick={handleColorChange}
+        />
+        <Image className="background_image" />
         <User className="main_user" />
       </div>
       <div className="main_boards_container">
