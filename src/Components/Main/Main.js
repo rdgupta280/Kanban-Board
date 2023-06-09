@@ -4,7 +4,7 @@ import Board from "../Board/Board";
 import "./Main.css";
 import { v4 as uuidv4 } from "uuid";
 import Editable from "../Editabled/Editable";
-import { FastForward } from "feather-icons-react/build/IconComponents";
+import { FastForward } from "react-feather";
 
 function Main() {
   const [boards, setBoards] = useState(
