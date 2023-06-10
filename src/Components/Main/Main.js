@@ -65,7 +65,7 @@ function Main() {
   };
 
   const dragEnded = (bid, cid) => {
-    let s_boardIndex, s_cardIndex, t_boardIndex, t_cardIndex;
+    let s_boardIndex, s_cardIndex, t_boardIndex, t_cardIndex;             //source,target
     s_boardIndex = boards.findIndex((item) => item.id === bid);
     if (s_boardIndex < 0) return;
 
@@ -85,13 +85,14 @@ function Main() {
     const tempBoards = [...boards];
     const sourceCard = tempBoards[s_boardIndex].cards[s_cardIndex];
     tempBoards[s_boardIndex].cards.splice(s_cardIndex, 1);
-    tempBoards[t_boardIndex].cards.splice(t_cardIndex, 0, sourceCard);
+    tempBoards[t_boardIndex].cards.splice(t_cardIndex , 0, sourceCard);         //  || 0
     setBoards(tempBoards);
 
     setTargetCard({
       bid: "",
       cid: "",
     });
+    console.log("Chinmay");
   };
 
   const dragEntered = (bid, cid) => {
@@ -100,6 +101,7 @@ function Main() {
       bid,
       cid,
     });
+    console.log("hi");
   };
 
   const updateCard = (bid, cid, card) => {
