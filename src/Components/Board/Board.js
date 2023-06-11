@@ -46,6 +46,7 @@ useEffect(()=>{
 function handletitle(){
   console.warn(props?.board?.id)
      SetEdit(false)
+     console.log(props.board)
   }
 
 function handleSubmit(e){
@@ -56,8 +57,8 @@ function handleSubmit(e){
     // <div
     //     className="board"
     //     draggable
-    //     onboardDragEnded={()=>props.boardDragEnded(props.boardId)}
-    //     onboardDragEntered={()=> props.boardDragEntered(props.boardId)}
+    //     onDragEnd={()=>props.boardDragEnded(props.board.id)}
+    //     onDragEnter={()=> props.boardDragEntered(props.board.id)}
     //   >
     <div className="board">
       <div className="board_header">
@@ -109,7 +110,7 @@ function handleSubmit(e){
         />
       </div>
     </div>
-     //</div>
+    // </div>
   );
 }
 

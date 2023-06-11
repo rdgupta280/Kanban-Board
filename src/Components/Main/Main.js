@@ -45,7 +45,7 @@ function Main() {
       title,
       labels: [],
       date: "",
-      tasks: [],
+      activity: [],
     });
     setBoards(tempBoards);
   };
@@ -63,10 +63,9 @@ function Main() {
     cards.splice(cardIndex, 1);
     setBoards(tempBoards);
   };
-// //lets try for board
+// //lets try for board drag by chinmay
 // const boardDragEnded =(bid)=>{
 //   let s_boardIndex,t_boardIndex;
-
 //     s_boardIndex=boards.findIndex((item)=> item.id===bid);
 //     t_boardIndex=boards.findIndex((item)=> item.id===targetCard.bid);
 //     const tempBoards=[...boards];
@@ -91,9 +90,6 @@ function Main() {
 // console.log("hi, Chinmay here")
 // }
 
-
-
-
 /////////
 
   const dragEnded = (bid, cid) => {
@@ -117,7 +113,7 @@ function Main() {
     const tempBoards = [...boards];
     const sourceCard = tempBoards[s_boardIndex].cards[s_cardIndex];
     tempBoards[s_boardIndex].cards.splice(s_cardIndex, 1);
-    tempBoards[t_boardIndex].cards.splice(t_cardIndex , 0, sourceCard);         //  || 0
+    tempBoards[t_boardIndex].cards.splice(t_cardIndex , 0, sourceCard);         
     setBoards(tempBoards);
 
     setTargetCard({
@@ -198,8 +194,8 @@ function Main() {
               addCard={addCardHandler}
               removeBoard={() => removeBoard(item.id)}
               removeCard={removeCard}
-              //boardDragEnded={boardDragEnded}
-              //boardDragEntered={boardDragEntered}
+              // boardDragEnded={boardDragEnded}
+              // boardDragEntered={boardDragEntered}
               dragEnded={dragEnded}
               dragEntered={dragEntered}
               updateCard={updateCard}
