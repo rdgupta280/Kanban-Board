@@ -11,7 +11,7 @@ React Icons
 React router
 
 # Data Structure
-...
+```
 const tempBoards = [...boards];
     tempBoards[index].cards.push({
       id: uuidv4(),
@@ -22,7 +22,7 @@ const tempBoards = [...boards];
     });
     setBoards(tempBoards);
   };
-...
+```
 
 
 Hello, there are 4 member in a Team:
