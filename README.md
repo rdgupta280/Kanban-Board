@@ -20,8 +20,7 @@ const tempBoards = [...boards];
       date: "",
       tasks: [],
     });
-    setBoards(tempBoards);
-  };
+ 
 ```
 
 
