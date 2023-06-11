@@ -25,9 +25,9 @@ const tempBoards = [...boards];
 ```
 
 
-Hello, there are 4 member in a Team:
-1. Chinmay Jain
-2. Bablu Kumar
+## Collaborators
+1. Chinmay Jain, https://github.com/chinmay874
+2. Bablu Kumar, https://github.com/Bablukmr
 3. Ram Dayal
 4. Gourav Dhankhar
 
