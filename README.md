@@ -11,7 +11,18 @@ React Icons
 React router
 
 # Data Structure
-
+...
+const tempBoards = [...boards];
+    tempBoards[index].cards.push({
+      id: uuidv4(),
+      title,
+      labels: [],
+      date: "",
+      tasks: [],
+    });
+    setBoards(tempBoards);
+  };
+...
 
 
 Hello, there are 4 member in a Team:
