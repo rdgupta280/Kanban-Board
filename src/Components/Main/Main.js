@@ -157,8 +157,8 @@ function Main() {
 
   const colors = [
     "#212121",
-    "red",
     "#3cb371",
+    "red",
     "#1a1a1a",
     "blue",
     "#333333",
@@ -168,7 +168,7 @@ function Main() {
     "black",
   ];
 
-  const [color, setColor] = useState("yellow");
+  const [color, setColor] = useState("#212121");
   function handleColorChange() {
     const currentIndex = colors.indexOf(color);
     //console.log(currentIndex)
