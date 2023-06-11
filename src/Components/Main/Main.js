@@ -63,6 +63,38 @@ function Main() {
     cards.splice(cardIndex, 1);
     setBoards(tempBoards);
   };
+// //lets try for board
+// const boardDragEnded =(bid)=>{
+//   let s_boardIndex,t_boardIndex;
+
+//     s_boardIndex=boards.findIndex((item)=> item.id===bid);
+//     t_boardIndex=boards.findIndex((item)=> item.id===targetCard.bid);
+//     const tempBoards=[...boards];
+// const sourceBoard=tempBoards[s_boardIndex];
+// tempBoards.splice(s_boardIndex,1);
+// tempBoards.splice(t_boardIndex,0,sourceBoard);
+// setBoards(tempBoards);
+
+// setTargetCard({
+//   bid: "",
+//   cid: "",
+// });
+// console.log("this is dragended")
+// }
+
+
+// const boardDragEntered=(bid)=>{
+//   if (targetCard.bid === bid) return;
+//   setTargetCard({
+//     bid,
+//   });
+// console.log("hi, Chinmay here")
+// }
+
+
+
+
+/////////
 
   const dragEnded = (bid, cid) => {
     let s_boardIndex, s_cardIndex, t_boardIndex, t_cardIndex;             //source,target
@@ -166,6 +198,8 @@ function Main() {
               addCard={addCardHandler}
               removeBoard={() => removeBoard(item.id)}
               removeCard={removeCard}
+              //boardDragEnded={boardDragEnded}
+              //boardDragEntered={boardDragEntered}
               dragEnded={dragEnded}
               dragEntered={dragEntered}
               updateCard={updateCard}

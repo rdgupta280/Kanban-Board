@@ -53,6 +53,12 @@ function handleSubmit(e){
   SetEdit(true)
 }
   return (
+    // <div
+    //     className="board"
+    //     draggable
+    //     onboardDragEnded={()=>props.boardDragEnded(props.boardId)}
+    //     onboardDragEntered={()=> props.boardDragEntered(props.boardId)}
+    //   >
     <div className="board">
       <div className="board_header">
 <div className="board_header_title">
@@ -103,7 +109,7 @@ function handleSubmit(e){
         />
       </div>
     </div>
-    // </div>
+     //</div>
   );
 }
 
