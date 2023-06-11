@@ -26,7 +26,6 @@ const tempBoards = [...boards];
  
 ```
 
-
 ## Collaborators
 1. Chinmay Jain, https://github.com/chinmay874
 2. Bablu Kumar, https://github.com/Bablukmr
