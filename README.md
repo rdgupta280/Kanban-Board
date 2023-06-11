@@ -7,9 +7,6 @@ The Kanban board is used to track work items as they move through each stage of 
 
 # Tech Stack
 ReactJS
-React beautiful DnD
-Recoil
-Material UI
 React Icons
 React router
 
