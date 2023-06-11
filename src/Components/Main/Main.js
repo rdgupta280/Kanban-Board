@@ -153,8 +153,8 @@ function Main() {
 
   const colors = [
     "#212121",
-    "red",
     "#3cb371",
+    "red",
     "#1a1a1a",
     "blue",
     "#333333",
