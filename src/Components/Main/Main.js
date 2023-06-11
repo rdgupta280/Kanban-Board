@@ -63,9 +63,41 @@ function Main() {
     cards.splice(cardIndex, 1);
     setBoards(tempBoards);
   };
+// //lets try for board
+// const boardDragEnded =(bid)=>{
+//   let s_boardIndex,t_boardIndex;
+
+//     s_boardIndex=boards.findIndex((item)=> item.id===bid);
+//     t_boardIndex=boards.findIndex((item)=> item.id===targetCard.bid);
+//     const tempBoards=[...boards];
+// const sourceBoard=tempBoards[s_boardIndex];
+// tempBoards.splice(s_boardIndex,1);
+// tempBoards.splice(t_boardIndex,0,sourceBoard);
+// setBoards(tempBoards);
+
+// setTargetCard({
+//   bid: "",
+//   cid: "",
+// });
+// console.log("this is dragended")
+// }
+
+
+// const boardDragEntered=(bid)=>{
+//   if (targetCard.bid === bid) return;
+//   setTargetCard({
+//     bid,
+//   });
+// console.log("hi, Chinmay here")
+// }
+
+
+
+
+/////////
 
   const dragEnded = (bid, cid) => {
-    let s_boardIndex, s_cardIndex, t_boardIndex, t_cardIndex;
+    let s_boardIndex, s_cardIndex, t_boardIndex, t_cardIndex;             //source,target
     s_boardIndex = boards.findIndex((item) => item.id === bid);
     if (s_boardIndex < 0) return;
 
@@ -85,13 +117,14 @@ function Main() {
     const tempBoards = [...boards];
     const sourceCard = tempBoards[s_boardIndex].cards[s_cardIndex];
     tempBoards[s_boardIndex].cards.splice(s_cardIndex, 1);
-    tempBoards[t_boardIndex].cards.splice(t_cardIndex, 0, sourceCard);
+    tempBoards[t_boardIndex].cards.splice(t_cardIndex , 0, sourceCard);         //  || 0
     setBoards(tempBoards);
 
     setTargetCard({
       bid: "",
       cid: "",
     });
+    console.log("Chinmay");
   };
 
   const dragEntered = (bid, cid) => {
@@ -100,6 +133,7 @@ function Main() {
       bid,
       cid,
     });
+    console.log("hi");
   };
 
   const updateCard = (bid, cid, card) => {
@@ -164,6 +198,8 @@ function Main() {
               addCard={addCardHandler}
               removeBoard={() => removeBoard(item.id)}
               removeCard={removeCard}
+              //boardDragEnded={boardDragEnded}
+              //boardDragEntered={boardDragEntered}
               dragEnded={dragEnded}
               dragEntered={dragEntered}
               updateCard={updateCard}
