@@ -134,7 +134,7 @@ function Main() {
     "black",
   ];
 
-  const [color, setColor] = useState("#1a1a1a");
+  const [color, setColor] = useState("yellow");
   function handleColorChange() {
     const currentIndex = colors.indexOf(color);
     //console.log(currentIndex)
@@ -145,8 +145,8 @@ function Main() {
   return (
     <div className="main" style={{ backgroundColor: color }}>
       {/* backgroundImage: `url(${backgroundImage})`,  */}
-      <div className="main_nav">
-        <h1 style={{ color: color }}>𝕂𝕒𝕟𝕓𝕒𝕟 𝔹𝕠𝕒𝕣𝕕</h1>
+      <div style={{ color: color }} className="main_nav">
+        <h1 >𝕂𝕒𝕟𝕓𝕒𝕟 𝔹𝕠𝕒𝕣𝕕</h1>
         <FastForward
           className="background_color"
           style={{ color: color }}
