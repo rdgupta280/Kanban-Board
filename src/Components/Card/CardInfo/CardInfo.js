@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Calendar,
-  List,
-  Tag,
-  Type,
-  X,
-} from "react-feather";
+import { Calendar, List, Tag, Type, X } from "react-feather";
 
 import Modal from "../../Modal/Modal";
 import Editable from "../../Editabled/Editable";
@@ -65,7 +59,7 @@ function CardInfo(props) {
     });
   };
 
-  useEffect(( ) => {
+  useEffect(() => {
     if (props.updateCard) props.updateCard(props.boardId, values.id, values);
   }, [values]);
 
@@ -130,7 +124,7 @@ function CardInfo(props) {
           <ul>
             {colors.map((item, index) => (
               <li
-                key={index + item}
+                key={index}
                 style={{ backgroundColor: item }}
                 className={selectedColor === item ? "li_active" : ""}
                 onClick={() => setSelectedColor(item)}
