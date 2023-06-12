@@ -10,77 +10,79 @@ import "./Board.css";
 function Board(props) {
   // const{ cards,id, title}=props.board;
   // console.log(props.board)
-  
-const [showDropdown, setShowDropdown] = useState(false);
-const [edit,SetEdit]=useState(true)
-const [inputValue, setInputValue]= useState(props.board?.title)
 
-let a;
-let b=JSON.parse(localStorage.getItem("kanbanBoard"));
-if(!b){
-  a=0;
-}
-else{
-  a=b;
-}
-//console.log(a,b);
-useEffect(()=>{
-    if(a){
-      const name= a.find((e)=>{
-        if(e.id===props.board.id){
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [edit, SetEdit] = useState(true);
+  const [inputValue, setInputValue] = useState(props.board?.title);
+
+  let a;
+  let b = JSON.parse(localStorage.getItem("kanbanBoard"));
+  if (!b) {
+    a = 0;
+  } else {
+    a = b;
+  }
+  //console.log(a,b);
+  useEffect(() => {
+    if (a) {
+      const name = a.find((e) => {
+        if (e.id === props.board.id) {
           return true;
         }
         return false;
-      }
-      )
+      });
       //console.log("hi",name);
-      if(name && name.title){
-        name.title=inputValue;
+      if (name && name.title) {
+        name.title = inputValue;
         //console.log(inputValue);
       }
-       localStorage.setItem("kanbanBoard",JSON.stringify(a))
+      localStorage.setItem("kanbanBoard", JSON.stringify(a));
     }
-},[inputValue])
+  }, [inputValue]);
 
-
-function handletitle(){
-  console.warn(props?.board?.id)
-     SetEdit(false)
+  function handletitle() {
+    console.warn(props?.board?.id);
+    SetEdit(false);
+    console.log(props.board);
   }
 
-function handleSubmit(e){
-  e.preventDefault()
-  SetEdit(true)
-}
+  function handleSubmit(e) {
+    e.preventDefault();
+    SetEdit(true);
+  }
   return (
     // <div
     //     className="board"
     //     draggable
-    //     onboardDragEnded={()=>props.boardDragEnded(props.boardId)}
-    //     onboardDragEntered={()=> props.boardDragEntered(props.boardId)}
+    //     onDragEnd={()=>props.boardDragEnded(props.board.id)}
+    //     onDragEnter={()=> props.boardDragEntered(props.board.id)}
     //   >
     <div className="board">
       <div className="board_header">
-<div className="board_header_title">
-
-     { edit ? <p  onClick={handletitle}>
-          {inputValue}
-        </p>: <form onSubmit={handleSubmit}><input value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/></form> 
-        }</div>
-
+        <div className="board_header_title">
+          {edit ? (
+            <p onClick={handletitle}>{inputValue}</p>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <input
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+              />
+            </form>
+          )}
+        </div>
 
         <div
           className="board_header_title_more"
           onClick={(event) => {
-              event.stopPropagation();
-              setShowDropdown(true);
-            }} 
+            event.stopPropagation();
+            setShowDropdown(true);
+          }}
         >
           <MoreHorizontal />
           {showDropdown && (
             <Dropdown
               class="board_dropdown"
-              
               onClose={() => setShowDropdown(false)}
             >
               <p onClick={() => props.removeBoard()}>Delete Board</p>
@@ -109,7 +111,7 @@ function handleSubmit(e){
         />
       </div>
     </div>
-     //</div>
+    // </div>
   );
 }
 
